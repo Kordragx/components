@@ -13,23 +13,22 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text('Components')),
-        backgroundColor: AppTheme.primary,
       ),
       body: Center(
         child: ListView.separated(
             itemBuilder: (ctx, i) => ListTile(
                   title: Text(menu[i].name),
                   leading: Icon(menu[i].icon, color: AppTheme.primary),
-                  onTap: () => toPushNamed(context),
+                  onTap: () => toPushNamed(context, menu[i].route),
                 ),
             separatorBuilder: (_, __) => const Divider(),
-            itemCount: AppRoutes.getRoutesApp().length),
+            itemCount: menu.length),
       ),
     );
   }
 
-  void toPushNamed(BuildContext context) {
-    Navigator.pushNamed(context, 'alert3');
+  void toPushNamed(BuildContext context, String route) {
+    Navigator.pushNamed(context, route);
   }
 
   void nextView(BuildContext context) {

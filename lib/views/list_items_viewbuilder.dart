@@ -9,16 +9,13 @@ class ListItemBuilderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepPurple,
           title: const Text('Hola'),
         ),
         body: ListView.separated(
             itemBuilder: (ctx, i) => ListTile(
                   title: Text(options[i]),
                   trailing: const Icon(Icons.arrow_forward_ios_outlined),
-                  onTap: () {
-                    print(options[i]);
-                  },
+                  onTap: () {},
                 ),
             separatorBuilder: (_, __) => const Divider(),
             itemCount: options.length));

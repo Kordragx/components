@@ -1,4 +1,5 @@
 import 'package:components/routes/app_routes.dart';
+import 'package:components/styles/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'views/views.dart';
@@ -11,15 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Material App',
-      initialRoute: AppRoutes.initialRoute,
-      onGenerateRoute: AppRoutes.onGenerateRoute,
-      routes: AppRoutes.getRoutesApp(),
-      theme: ThemeData.light().copyWith(
-          primaryColor: Colors.indigo,
-          appBarTheme: const AppBarTheme(color: Colors.purpleAccent)),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Material App',
+        initialRoute: AppRoutes.initialRoute,
+        onGenerateRoute: AppRoutes.onGenerateRoute,
+        routes: AppRoutes.getRoutesApp(),
+        theme: AppTheme.appThemeData);
   }
 
   MaterialPageRoute defaultRoute() {
